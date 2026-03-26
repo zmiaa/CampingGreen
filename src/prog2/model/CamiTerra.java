@@ -2,8 +2,8 @@ package prog2.model;
 
 public class CamiTerra extends AccesTerra {
     // constructor
-    public CamiTerra(String id, String nom, int longitud) {
-        super(id, nom, longitud);
+    public CamiTerra(String id, boolean estat, int longitud) {
+        super(id, estat, longitud);
     }
 
     @Override

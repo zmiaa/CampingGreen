@@ -5,8 +5,8 @@ public class CarreteraAsfalt extends AccesAsfalt {
     private double pesMax;
 
     // constructor
-    public CarreteraAsfalt(String id, String nom, double metres, double pesMax) {
-        super(id, nom, metres);
+    public CarreteraAsfalt(String id, boolean estat, double metres, double pesMax) {
+        super(id, estat, metres);
         this.pesMax = pesMax;
     }
 

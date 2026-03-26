@@ -4,12 +4,12 @@ public class Glamping extends Allotjament {
     private String materials;
     private boolean casaMascota;
 
-    public Glamping(String nom, String id, long estadaMinimaTempAlta, long estadaMinimaTempBaixa, boolean operatiu, String iluminacio) {
-        super(nom, id, 5, 3, operatiu, iluminacio);
-        this.materials = nom;
-        this.casaMascota = true;
+    // constructor
+    public Glamping(String nom, String id, boolean estat, String iluminacio, String materials, boolean casaMascota) {
+        super(nom, id, estat, iluminacio);
+        this.materials = materials;
+        this.casaMascota = casaMascota;
     }
-
 
     public String getMaterials() { return materials; }
     public void setMaterials(String materials) { this.materials = materials; }

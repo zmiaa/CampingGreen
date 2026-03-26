@@ -5,19 +5,24 @@ import java.io.Serializable;
 // se tendrá que implementar Serializable aquí también, sinó no funciona el save
 public abstract class Acces implements InAcces, Serializable {
     // atributs
-    private String id;
     private String nom;
-    private boolean obert;
-    private boolean iluminat;
+    private boolean estat;
     private LlistaAllotjaments allotjaments;
 
     // constructor
-    public Acces(String id, String nom) {
-        this.id = id;
+    public Acces(String nom, boolean estat) {
         this.nom = nom;
-        this.obert = true;
-        this.iluminat = true;
+        this.estat = estat;
         this.allotjaments = new LlistaAllotjaments();
+    }
+
+
+    public void setEstat(boolean estat) {
+        this.estat = estat;
+    }
+
+    public LlistaAllotjaments getAllotjaments() {
+        return allotjaments;
     }
 
     @Override
@@ -29,14 +34,12 @@ public abstract class Acces implements InAcces, Serializable {
 
     @Override
     public void tancarAcces() {
-        this.obert = false;
-        this.iluminat = false;
+        this.estat = false;
     }
 
     @Override
     public void obrirAcces() {
-        this.obert = true;
-        this.iluminat = true;
+        this.estat = true;
     }
 
     @Override
@@ -49,7 +52,7 @@ public abstract class Acces implements InAcces, Serializable {
 
     @Override
     public boolean getEstat() {
-        return obert;
+        return estat;
     }
 
     @Override
@@ -57,35 +60,12 @@ public abstract class Acces implements InAcces, Serializable {
         return allotjaments;
     }
 
-    public String getId() {
-        return id;
-    }
-
     public void setAllotjaments(LlistaAllotjaments allotjaments) {
         this.allotjaments = allotjaments;
-    }
-
-    public boolean isIluminat() {
-        return iluminat;
-    }
-
-    public void setIluminat(boolean iluminat) {
-        this.iluminat = iluminat;
-    }
-
-    public boolean isObert() {
-        return obert;
-    }
-
-    public void setObert(boolean obert) {
-        this.obert = obert;
     }
 
     public void setNom(String nom) {
         this.nom = nom;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
 }

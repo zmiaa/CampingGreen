@@ -5,8 +5,8 @@ public abstract class AccesTerra extends Acces {
     private int longitud;
 
     // constructor
-    public AccesTerra(String id, String nom, int longitud) {
-        super(id, nom);
+    public AccesTerra(String id, boolean estat, int longitud) {
+        super(id, estat);
         this.longitud = longitud;
     }
 

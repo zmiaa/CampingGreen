@@ -5,14 +5,12 @@ public class Bungalow extends Allotjament {
     private boolean terrassa, tv, aireFred;
 
     // constructor
-
-
-    public Bungalow(String nom, String id, long estadaMinimaTempAlta, long estadaMinimaTempBaixa, boolean operatiu, String iluminacio, int placesParquing, boolean aireFred, boolean tv, boolean terrassa) {
-        super(nom, id, 7, 4, operatiu, iluminacio);
+    public Bungalow(String nom, String id, boolean estat, String iluminacio, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
+        super(nom, id, estat, iluminacio);
         this.placesParquing = placesParquing;
-        this.aireFred = aireFred;
-        this.tv = tv;
         this.terrassa = terrassa;
+        this.tv = tv;
+        this.aireFred = aireFred;
     }
 
     public int getPlacesParquing() { return placesParquing; }

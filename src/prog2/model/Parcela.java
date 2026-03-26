@@ -4,11 +4,12 @@ public class Parcela extends Allotjament {
     private float mida;
     private boolean connexioElectrica;
 
-
-    public Parcela(String allotjamentTest, String id001, boolean b, String s, float v, boolean b1) {
-        super(allotjamentTest, id001, 4, 2, b1,s);
+    // constructor
+    public Parcela(String nom, String id, boolean estat, String iluminacio, float mida, boolean connexioElectrica) {
+        super(nom, id, estat, iluminacio);
+        this.mida = mida;
+        this.connexioElectrica = connexioElectrica;
     }
-
 
     public float getMida() { return mida; }
     public void setMida(float mida) { this.mida = mida; }

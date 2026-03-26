@@ -10,16 +10,16 @@ public abstract class Allotjament implements InAllotjament, Serializable {
     private long estadaMinimaTempAlta;
 
     // nous atributs
-    private String estat;
-    private int iluminacio;
+    private boolean estat;
+    private String iluminacio;
     // constructor
-    public Allotjament(String nom, String id, long estadaMinimaTempAlta, long estadaMinimaTempBaixa, String operatiu, int iluminacio) {
-        this.estadaMinimaTempAlta = estadaMinimaTempAlta;
-        this.estadaMinimaTempBaixa = estadaMinimaTempBaixa;
+    public Allotjament(String nom, String id, boolean estat, String iluminacio) {
         this.id = id;
         this.nom = nom;
-        this.estat = operatiu;
+        this.estat = estat;
         this.iluminacio = iluminacio;
+        this.estadaMinimaTempBaixa = 2;
+        this.estadaMinimaTempAlta = 4;
     }
 
     // getters i setters
@@ -44,19 +44,6 @@ public abstract class Allotjament implements InAllotjament, Serializable {
         this.id = id;
     }
 
-    @Override
-    public long getEstadaMinima(Temp temp){
-        // si és true, retorna estadaMinimaTempAlta, al contrari, retorna estadaMinimaTempBaixa
-        return (temp == Temp.ALTA) ? estadaMinimaTempAlta : estadaMinimaTempBaixa;
-    }
-
-    @Override
-    public void setEstadaMinima(long alta, long baixa){
-        this.estadaMinimaTempAlta = alta;
-        this.estadaMinimaTempBaixa = baixa;
-    }
-
-
     public long getEstadaMinimaTempBaixa() {
         return estadaMinimaTempBaixa;
     }
@@ -73,42 +60,54 @@ public abstract class Allotjament implements InAllotjament, Serializable {
         this.estadaMinimaTempAlta = estadaMinimaTempAlta;
     }
 
-    public String getEstat() {
+    public boolean getEstat() {
         return estat;
     }
 
-    public void setEstat(String estat) {
+    public void setEstat(boolean estat) {
         this.estat = estat;
     }
 
-    public int getIluminacio() {
+    @Override
+    public void setEstadaMinima(long estadaMinimaALTA_, long estadaMinimaBAIXA_) {
+        this.estadaMinimaTempAlta = estadaMinimaALTA_;
+        this.estadaMinimaTempBaixa = estadaMinimaBAIXA_;
+    }
+
+    public long getEstadaMinima(InAllotjament.Temp temp) {
+        return (temp == InAllotjament.Temp.ALTA) ? estadaMinimaTempAlta : estadaMinimaTempBaixa;
+    }
+
+
+    public String getIluminacio() {
         return iluminacio;
     }
 
-    public void setIluminacio(int iluminacio) {
+    public void setIluminacio(String iluminacio) {
         this.iluminacio = iluminacio;
     }
 
     @Override
     public void tancarAllotjament(TascaManteniment tasca) {
-        this.estat = "No operatiu";
-        this.iluminacio = 0;
+        this.estat = false;
+
+        if (tasca.getTipus() == TascaManteniment.TipusTascaManteniment.Neteja) {
+            this.iluminacio = "50%";
+        } else {
+            this.iluminacio = "0%";
+        }
     }
 
     @Override
     public void obrirAllotjament() {
-        this.estat = "Operatiu";
-        this.iluminacio = 100;
+        this.estat = true;
+        this.iluminacio = "100%";
     }
 
-    @Override
-    public String toString() {
-        return "Nom=" + nom +
-                ", Id=" + id +
-                ", estada mínima en temp ALTA: " + estadaMinimaTempAlta +
-                ", estada mínima en temp BAIXA: " + estadaMinimaTempBaixa +
-                '.';
-    }
+    // afegir calculMida()?
+
+
+    // falta toString
 
 
 }

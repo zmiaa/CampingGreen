@@ -3,11 +3,11 @@ package prog2.model;
 public class MobilHome extends Allotjament {
     private boolean terrassaBarbacoa;
 
-    public MobilHome(String nom, String id, long estadaMinimaTempAlta, long estadaMinimaTempBaixa, boolean operatiu, String iluminacio) {
-        super(nom, id, 5, 3, operatiu, iluminacio);
+    // constructor
+    public MobilHome(String nom, String id, boolean estat, String iluminacio, boolean terrassaBarbacoa) {
+        super(nom, id, estat, iluminacio);
         this.terrassaBarbacoa = terrassaBarbacoa;
     }
-
 
     public boolean isTerrassaBarbacoa() { return terrassaBarbacoa; }
     public void setTerrassaBarbacoa(boolean terrassaBarbacoa) { this.terrassaBarbacoa = terrassaBarbacoa; }

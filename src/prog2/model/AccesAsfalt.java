@@ -5,8 +5,8 @@ public abstract class AccesAsfalt extends Acces{
     private double metres;
 
     // constructor
-    public AccesAsfalt(String id, String nom, double metres) {
-        super(id, nom);
+    public AccesAsfalt(String id, boolean estat, double metres) {
+        super(id, estat);
         this.metres = metres;
     }
 

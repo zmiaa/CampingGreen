@@ -4,6 +4,7 @@ import prog2.vista.ExcepcioCamping;
 
 import java.io.Serializable;
 
+// falta implementar mètodes
 public class Camping implements InCamping, Serializable {
     // atributs
     private String nom;

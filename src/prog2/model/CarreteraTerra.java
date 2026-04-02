@@ -5,7 +5,7 @@ public class CarreteraTerra extends AccesTerra{
     private double amplada;
 
     // constructor
-    public CarreteraTerra(String id, boolean estat, int longitud, double amplada) {
+    public CarreteraTerra(String id, boolean estat, float longitud, double amplada) {
         super(id, estat, longitud);
         this.amplada = amplada;
     }

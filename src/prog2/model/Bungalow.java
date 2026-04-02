@@ -1,12 +1,12 @@
 package prog2.model;
 
-public class Bungalow extends Allotjament {
+public class Bungalow extends Casa {
     private int placesParquing;
     private boolean terrassa, tv, aireFred;
 
     // constructor
-    public Bungalow(String nom, String id, boolean estat, String iluminacio, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
-        super(nom, id, estat, iluminacio);
+    public Bungalow(String nom, String id, boolean estat, String iluminacio, float mida, int numHabitacions, int numPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
+        super(nom, id, estat, iluminacio, mida, numHabitacions, numPersones);
         this.placesParquing = placesParquing;
         this.terrassa = terrassa;
         this.tv = tv;
@@ -22,18 +22,25 @@ public class Bungalow extends Allotjament {
     public boolean isAireFred() { return aireFred; }
     public void setAireFred(boolean aireFred) { this.aireFred = aireFred; }
 
-    @Override
-    public String toString() {
-        return super.toString() + ", placesParquing=" + placesParquing + ", terrassa=" + terrassa + ", tv=" + tv + ", aireFred=" + aireFred;
-    }
 
     @Override
     public void tancarAllotjament(TascaManteniment tasca) {
-
+        super.tancarAllotjament(tasca);
     }
 
     @Override
     public void obrirAllotjament() {
+        super.obrirAllotjament();
 
+    }
+
+    @Override
+    public String toString() {
+        return "Bungalow{" +
+                "placesParquing=" + placesParquing +
+                ", terrassa=" + terrassa +
+                ", tv=" + tv +
+                ", aireFred=" + aireFred +
+                '}';
     }
 }

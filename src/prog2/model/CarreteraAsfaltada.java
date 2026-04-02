@@ -1,11 +1,11 @@
 package prog2.model;
 
-public class CarreteraAsfalt extends AccesAsfalt {
+public class CarreteraAsfaltada extends AccesAsfalt {
     // atributs
     private double pesMax;
 
     // constructor
-    public CarreteraAsfalt(String id, boolean estat, double metres, double pesMax) {
+    public CarreteraAsfaltada(String id, boolean estat, double metres, double pesMax) {
         super(id, estat, metres);
         this.pesMax = pesMax;
     }

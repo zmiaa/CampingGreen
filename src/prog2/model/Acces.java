@@ -68,4 +68,12 @@ public abstract class Acces implements InAcces, Serializable {
         this.nom = nom;
     }
 
+    @Override
+    public String toString() {
+        return "Acces{" +
+                "nom='" + nom + '\'' +
+                ", estat=" + estat +
+                ", allotjaments=" + allotjaments +
+                '}';
+    }
 }

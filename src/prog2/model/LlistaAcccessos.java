@@ -71,4 +71,11 @@ public class LlistaAcccessos implements InLlistaAccessos, Serializable {
         }
         return total;
     }
+
+    @Override
+    public String toString() {
+        return "LlistaAcccessos{" +
+                "accesos=" + accesos +
+                '}';
+    }
 }

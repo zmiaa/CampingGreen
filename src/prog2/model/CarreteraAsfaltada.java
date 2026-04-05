@@ -23,4 +23,11 @@ public class CarreteraAsfaltada extends AccesAsfalt {
     public void setPesMax(double pesMax) {
         this.pesMax = pesMax;
     }
+
+    @Override
+    public String toString() {
+        return "CarreteraAsfaltada{" +
+                "pesMax=" + pesMax +
+                '}';
+    }
 }

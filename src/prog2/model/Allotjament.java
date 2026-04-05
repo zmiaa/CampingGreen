@@ -132,7 +132,4 @@ public abstract class Allotjament implements InAllotjament, Serializable {
     // afegir calculMida()?
 
 
-    // falta toString
-
-
 }

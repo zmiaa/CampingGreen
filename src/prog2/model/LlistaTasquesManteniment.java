@@ -50,4 +50,11 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment, Ser
         }
         throw new ExcepcioCamping("No s'ha trobat la tasca amb número: " + num);
     }
+
+    @Override
+    public String toString() {
+        return "LlistaTasquesManteniment{" +
+                "tasques=" + tasques +
+                '}';
+    }
 }

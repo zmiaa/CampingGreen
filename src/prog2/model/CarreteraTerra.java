@@ -23,4 +23,11 @@ public class CarreteraTerra extends AccesTerra{
     public void setAmplada(double amplada) {
         this.amplada = amplada;
     }
+
+    @Override
+    public String toString() {
+        return "CarreteraTerra{" +
+                "amplada=" + amplada +
+                '}';
+    }
 }

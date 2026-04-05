@@ -8,21 +8,33 @@ public abstract class Allotjament implements InAllotjament, Serializable {
     private String id;
     private long estadaMinimaTempBaixa;
     private long estadaMinimaTempAlta;
-
+    private float mida;
     // nous atributs
     private boolean estat;
     private String iluminacio;
     // constructor
-    public Allotjament(String nom, String id, boolean estat, String iluminacio) {
+    public Allotjament(String nom, String id, boolean estat, String iluminacio, float mida) {
         this.id = id;
         this.nom = nom;
         this.estat = estat;
         this.iluminacio = iluminacio;
+        this.mida = mida;
         this.estadaMinimaTempBaixa = 2;
         this.estadaMinimaTempAlta = 4;
     }
 
     // getters i setters
+    public float getMida() {
+        return mida;
+    }
+
+    public void setMida(float mida) {
+        this.mida = mida;
+    }
+
+    public boolean isEstat() {
+        return estat;
+    }
 
     @Override
     public String getNom() {
@@ -104,10 +116,20 @@ public abstract class Allotjament implements InAllotjament, Serializable {
         this.iluminacio = "100%";
     }
 
+    @Override
+    public String toString() {
+        return "Allotjament{" +
+                "nom='" + nom + '\'' +
+                ", id='" + id + '\'' +
+                ", estadaMinimaTempBaixa=" + estadaMinimaTempBaixa +
+                ", estadaMinimaTempAlta=" + estadaMinimaTempAlta +
+                ", mida=" + mida +
+                ", estat=" + estat +
+                ", iluminacio='" + iluminacio + '\'' +
+                '}';
+    }
+
     // afegir calculMida()?
-
-
-    // falta toString
 
 
 }

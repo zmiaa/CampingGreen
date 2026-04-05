@@ -1,8 +1,8 @@
 package prog2.model;
 
-public class CamiAsfalt extends AccesAsfalt {
+public class CamiAsfaltat extends AccesAsfalt {
     // constructor
-    public CamiAsfalt(String id, boolean estat, double metres) {
+    public CamiAsfaltat(String id, boolean estat, double metres) {
         super(id, estat, metres);
     }
 

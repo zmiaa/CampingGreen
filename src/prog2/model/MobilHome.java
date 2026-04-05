@@ -1,11 +1,11 @@
 package prog2.model;
 
-public class MobilHome extends Allotjament {
+public class MobilHome extends Casa {
     private boolean terrassaBarbacoa;
 
     // constructor
-    public MobilHome(String nom, String id, boolean estat, String iluminacio, boolean terrassaBarbacoa) {
-        super(nom, id, estat, iluminacio);
+    public MobilHome(String nom, String id, boolean estat, String iluminacio, float mida, int numHabitacions, int numPersones, boolean terrassaBarbacoa) {
+        super(nom, id, estat, iluminacio, mida, numHabitacions, numPersones);
         this.terrassaBarbacoa = terrassaBarbacoa;
     }
 
@@ -19,11 +19,11 @@ public class MobilHome extends Allotjament {
 
     @Override
     public void tancarAllotjament(TascaManteniment tasca) {
-
+        super.tancarAllotjament(tasca);
     }
 
     @Override
     public void obrirAllotjament() {
-
+        super.obrirAllotjament();
     }
 }
